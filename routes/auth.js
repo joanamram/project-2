@@ -25,7 +25,9 @@ authRoutes.post('/signup', (req, res, next) => {
     return;
   }
 
-  User.findOne({ email: emailInput }, '_id', (err, existingUser) => {
+  User.findOne({
+    email: emailInput
+  }, '_id', (err, existingUser) => {
     if (err) {
       next(err);
       return;
@@ -79,7 +81,9 @@ authRoutes.post('/login', (req, res, next) => {
     return;
   }
 
-  User.findOne({ email: emailInput }, (err, user) => {
+  User.findOne({
+    email: emailInput
+  }, (err, user) => {
     if (err || user === null) {
       res.render('auth/login', {
         errorMessage: `There isn't an account with email ${emailInput}.`

@@ -1,0 +1,136 @@
+// @import 'main';
+// @import 'form';
+
+$background-color: #315989;
+$white: #fff;
+$green-link: #1ab188;
+$form-back: #13232f;
+$text-back: #a0b3b0;
+$green-dark: darken($green-link, 10%);
+
+body {
+  background-color: $background-color;
+  color: $white;
+  font: 14px 'Titillium Web', Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+a {
+  color: $green-link;
+  text-decoration: none;
+  transition: .1s ease;
+
+  &:hover {
+    color: $green-dark;
+  }
+}
+
+.container {
+  padding: 0;
+}
+
+.nav-link {
+  color: $green-link;
+  text-decoration: none;
+  transition: .1s ease;
+
+  &:hover {
+    color: $green-dark;
+  }
+}
+
+.form {
+  background: $form-back;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px $form-back;
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 40px;
+}
+
+h1 {
+  color: $white;
+  font-weight: 300;
+  margin: 0 0 40px;
+  text-align: center;
+}
+
+input,
+textarea {
+  background: none;
+  background-image: none;
+  border: 1px solid $text-back;
+  border-radius: 0;
+  color: $white;
+  display: block;
+  font-size: 22px;
+  height: 100%;
+  padding: 5px 10px;
+  transition: border-color .25s ease, box-shadow .25s ease;
+  width: 100%;
+
+  &:focus {
+    border-color: $green-link;
+    outline: 0;
+  }
+}
+
+textarea {
+  border: 2px solid $text-back;
+  resize: vertical;
+}
+
+.field-wrap {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.top-row {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  > div {
+    float: left;
+    margin-right: 4%;
+    width: 48%;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.button {
+  // -webkit-appearance: none;
+  background: $green-link;
+  border: 0;
+  border-radius: 0;
+  color: $white;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  outline: none;
+  padding: 15px 0;
+  text-transform: uppercase;
+  transition: 1s ease;
+
+  &:hover,
+  &:focus {
+    background: $green-dark;
+  }
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
