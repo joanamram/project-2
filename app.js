@@ -15,6 +15,8 @@ mongoose.connect('mongodb://localhost/project2');
 const index = require('./routes/index');
 const users = require('./routes/users');
 const authRoutes = require('./routes/auth');
+const interactRoutes = require('./routes/interact');
+const tweetRoutes = require('./routes/tweeting');
 
 const app = express();
 
@@ -57,6 +59,8 @@ app.use((req, res, next) => {
 app.use('/', index);
 app.use('/users', users);
 app.use('/', authRoutes);
+app.use('/', interactRoutes);
+app.use('/', tweetRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

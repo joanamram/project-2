@@ -2,9 +2,11 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
-const User = require('../models/user');
+const User = require('../models/User');
 const authRoutes = express.Router();
 const session = require('express-session');
+const mongoose = require('mongoose');
+
 
 authRoutes.get('/signup', (req, res, next) => {
   res.render('auth/signup', {

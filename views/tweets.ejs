@@ -1,0 +1,8 @@
+<h3>Tweets</h3>
+
+<section>
+  <% tweets.forEach(function(tweet) { %>
+    <p><%= tweet.content %></p>
+    <p>Favorites: <%= tweet.favorites %></p>
+  <% })%>
+</section>
