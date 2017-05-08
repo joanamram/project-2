@@ -5,8 +5,9 @@ const Schema = mongoose.Schema;
 const tweetSchema = new Schema({
   user: String,
   content: String,
-  favorites: String,
-  retweets: String
+  picPath: String,
+  favorites: Number,
+  retweets: Number
 });
 
 tweetSchema.set('timestamps', true);

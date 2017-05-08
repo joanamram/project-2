@@ -17,6 +17,7 @@ const users = require('./routes/users');
 const authRoutes = require('./routes/auth');
 const interactRoutes = require('./routes/interact');
 const tweetRoutes = require('./routes/tweeting');
+const adminRoutes = require('./routes/admin');
 
 const app = express();
 
@@ -61,6 +62,7 @@ app.use('/users', users);
 app.use('/', authRoutes);
 app.use('/', interactRoutes);
 app.use('/', tweetRoutes);
+app.use('/', adminRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
