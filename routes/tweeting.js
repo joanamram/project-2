@@ -31,32 +31,12 @@ const client = new Twitter({
 //     console.log(error);
 //   });
 // });
-
 // client.get('https://api.twitter.com/1.1/search/tweets.json', {q: 'Forbes', result_type: 'popular', count: 1}, function(error, tweets, response) {
   // mongoose.connection.collections.tweets.drop( function(err) {
   //   console.log('collection dropped');
   // });
-//    tweets.statuses.forEach(function(elem){
-//      console.log(elem.entities.media[0].media_url);
-//      const tweetPost = {
-//        user: elem.screen_name,
-//        content: elem.text,
-//        picPath: elem.entities.media[0].media_url,
-//        favorites: elem.favorite_count,
-//        retweets: elem.retweet_count
-//      }
-//      const tweet = new Tweet(tweetPost);
-//        tweet.save(function (err) {
-//          if (err) return handleError(err);
-//        });
-//
-//     //  console.log(elem);
-//     //  console.log('retweets -> ' + elem.retweet_count);
-//     //  console.log('favorites -> ' + elem.favorite_count);
-//    });
-//
-//
-// });
+
+
 
 tweetRoutes.get('/contest/:hashtag', function(req, res, next) {
   let hash = '#'+req.params.hashtag;
@@ -64,7 +44,7 @@ tweetRoutes.get('/contest/:hashtag', function(req, res, next) {
   client.get('https://api.twitter.com/1.1/search/tweets.json', {q: hash, result_type: 'mixed', count: 5}, function(error, tweets, response) {
     let sorted = tweets.statuses.sort();
     // .exec(function(err, tweets){
-      res.render('tweets', {tweets});
+      res.render('interact/tweets', {tweets});
     // });
       console.log(sorted);
   });

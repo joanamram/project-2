@@ -14,12 +14,11 @@
           <div class="field-wrap">
             <input type="text" placeholder="Final Date" name="finalDate" />
           </div>
-          <div class="field-wrap">
+          <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="text" name="name">
             <input type="file" name="photo">
-          </div>
-          <div class="field-wrap">
             <input type="submit" value="Save">
-          </div>
+          </form>
           <button class="button button-block" />Create</button>
         </form>
   </div>
